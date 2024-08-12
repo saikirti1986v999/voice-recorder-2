@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="46px" height="46px" viewBox="0 0 46 46" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 60.1 (88133) - https://sketch.com -->
+    <title>info-button</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="info-button" fill="#838587" fill-rule="nonzero">
+            <path d="M22.909,0 C10.258,0 0,10.257 0,22.908 C0,35.56 10.258,45.818 22.909,45.818 C35.56,45.818 45.818,35.56 45.818,22.908 C45.818,10.257 35.561,0 22.909,0 Z M26.411,35.417 C26.411,37.338 24.838,38.895 22.919,38.895 C20.999,38.895 19.427,37.338 19.427,35.417 L19.427,20.201 C19.427,18.281 20.999,16.724 22.919,16.724 C24.838,16.724 26.411,18.28 26.411,20.201 L26.411,35.417 Z M22.909,13.851 C20.79,13.851 19.072,12.133 19.072,10.015 C19.072,7.895 20.79,6.179 22.909,6.179 C25.027,6.179 26.746,7.895 26.746,10.015 C26.746,12.133 25.027,13.851 22.909,13.851 Z" id="Shape"></path>
+        </g>
+    </g>
+</svg>

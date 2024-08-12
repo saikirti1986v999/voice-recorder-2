@@ -1,0 +1,285 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	
+	xmlns:georss="http://www.georss.org/georss"
+	xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#"
+	>
+
+<channel>
+	<title>Engineering Archives - Jumpshare Blog</title>
+	<atom:link href="https://jumpshare.com/blog/category/engineering/feed/" rel="self" type="application/rss+xml" />
+	<link>https://jumpshare.com/blog/category/engineering/</link>
+	<description></description>
+	<lastBuildDate>Fri, 01 Sep 2023 21:06:20 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.6.1</generator>
+<site xmlns="com-wordpress:feed-additions:1">211418835</site>	<item>
+		<title>Deep Learning on AWS Graviton2, NVIDIA Tensor T4G for as Low as Free with CUDA-12.2</title>
+		<link>https://jumpshare.com/blog/deep-learning-on-aws-graviton2-nvidia-tensor-t4g-for-as-low-as-free-with-cuda-12-2/</link>
+					<comments>https://jumpshare.com/blog/deep-learning-on-aws-graviton2-nvidia-tensor-t4g-for-as-low-as-free-with-cuda-12-2/#respond</comments>
+		
+		<dc:creator><![CDATA[Mirza Bilal]]></dc:creator>
+		<pubDate>Fri, 01 Sep 2023 21:06:20 +0000</pubDate>
+				<category><![CDATA[Engineering]]></category>
+		<guid isPermaLink="false">https://jumpshare.com/blog/?p=3392</guid>
+
+					<description><![CDATA[<p>Note: The “as low as free” tagline is based on g5g.xlarge spot instance rates, which have been as low as $0.1519/hr. Introduction The world we live in today heavily relies on artificial intelligence. From vacuum bots to sales support, from self-driving cars to disease detection, from finding the content you want to consume to translating [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://jumpshare.com/blog/deep-learning-on-aws-graviton2-nvidia-tensor-t4g-for-as-low-as-free-with-cuda-12-2/">Deep Learning on AWS Graviton2, NVIDIA Tensor T4G for as Low as Free with CUDA-12.2</a> appeared first on <a rel="nofollow" href="https://jumpshare.com/blog">Jumpshare Blog</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<p><a class="a2a_button_facebook" href="https://www.addtoany.com/add_to/facebook?linkurl=https%3A%2F%2Fjumpshare.com%2Fblog%2Fdeep-learning-on-aws-graviton2-nvidia-tensor-t4g-for-as-low-as-free-with-cuda-12-2%2F&amp;linkname=Deep%20Learning%20on%20AWS%20Graviton2%2C%20NVIDIA%20Tensor%20T4G%20for%20as%20Low%20as%20Free%20with%20CUDA-12.2" title="Facebook" rel="nofollow noopener" target="_blank"></a><a class="a2a_button_twitter" href="https://www.addtoany.com/add_to/twitter?linkurl=https%3A%2F%2Fjumpshare.com%2Fblog%2Fdeep-learning-on-aws-graviton2-nvidia-tensor-t4g-for-as-low-as-free-with-cuda-12-2%2F&amp;linkname=Deep%20Learning%20on%20AWS%20Graviton2%2C%20NVIDIA%20Tensor%20T4G%20for%20as%20Low%20as%20Free%20with%20CUDA-12.2" title="Twitter" rel="nofollow noopener" target="_blank"></a><a class="a2a_button_reddit" href="https://www.addtoany.com/add_to/reddit?linkurl=https%3A%2F%2Fjumpshare.com%2Fblog%2Fdeep-learning-on-aws-graviton2-nvidia-tensor-t4g-for-as-low-as-free-with-cuda-12-2%2F&amp;linkname=Deep%20Learning%20on%20AWS%20Graviton2%2C%20NVIDIA%20Tensor%20T4G%20for%20as%20Low%20as%20Free%20with%20CUDA-12.2" title="Reddit" rel="nofollow noopener" target="_blank"></a></p><section class="section section--body">
+<div class="section-content">
+<figure><img fetchpriority="high" decoding="async" class="alignnone wp-image-3396 size-full" src="https://blog-cdn.jumpshare.com/blog/wp-content/uploads/2023/09/pexels-google-deepmind-18069365.jpg" alt="" width="1920" height="1080" srcset="https://blog-cdn.jumpshare.com/blog/wp-content/uploads/2023/09/pexels-google-deepmind-18069365.jpg 1920w, https://blog-cdn.jumpshare.com/blog/wp-content/uploads/2023/09/pexels-google-deepmind-18069365-350x197.jpg 350w, https://blog-cdn.jumpshare.com/blog/wp-content/uploads/2023/09/pexels-google-deepmind-18069365-1024x576.jpg 1024w, https://blog-cdn.jumpshare.com/blog/wp-content/uploads/2023/09/pexels-google-deepmind-18069365-768x432.jpg 768w, https://blog-cdn.jumpshare.com/blog/wp-content/uploads/2023/09/pexels-google-deepmind-18069365-1536x864.jpg 1536w" sizes="(max-width: 1920px) 100vw, 1920px" /></figure>
+<div class="section-inner sectionLayout--insetColumn">
+<figure class="graf graf--figure"></figure>
+<p><em><strong>Note:</strong> The “as low as free” tagline is based on g5g.xlarge spot instance rates, which have been as low as $0.1519/hr.</em></p>
+<h2 class="graf graf--h3" style="text-align: left;">Introduction</h2>
+<p class="graf graf--p" style="text-align: left;">The world we live in today heavily relies on artificial intelligence. From vacuum bots to sales support, from self-driving cars to disease detection, from finding the content you want to consume to translating from a foreign language to your native one. AI is behind every great product out there, and the need for an efficient, cost-effective, and scalable deep learning architecture has never been more critical.</p>
+<p class="graf graf--p" style="text-align: left;">The G5g instances powered by Amazon’s own Graviton2 processor and also feature NVIDIA T4G Tensor Core GPUs are a cost-effective alternative to Intel’s and AMD’s powered instances for deploying deep learning applications.</p>
+<h2 class="graf graf--h3" style="text-align: left;">The Dilemma</h2>
+<p class="graf graf--p" style="text-align: left;">AWS offers robust, powerful, cost-effective architecture for running artificial intelligence and deep learning tasks. One of the advantages is the option to use spot instances, which are far more cost-effective at times and up to 70% cheaper than on-demand instances.</p>
+<p class="graf graf--p" style="text-align: left;">For example, the spot pricing history for the <code class="markup--code markup--p-code">g5g.xlarge</code> instance in various “us-east” zones ranged from <strong class="markup--strong markup--p-strong">$0.1720</strong> to <strong class="markup--strong markup--p-strong">$0.1519</strong> per hour for the past three months. These rates are tempting, but at the time of writing, no official <strong class="markup--strong markup--p-strong">Amazon Linux 2023</strong> Deep learning AMI is available for the Amazon <strong class="markup--strong markup--p-strong">G5g</strong> instances family. Setting up the environment can be cumbersome: finding drivers, the correct dev toolchain, and a pre-compiled PyTorch module supporting the latest DL toolkit</p>
+<p class="graf graf--p" style="text-align: left;"><img decoding="async" class="alignnone wp-image-3430 size-full" src="https://blog-cdn.jumpshare.com/blog/wp-content/uploads/2023/09/1-yceDwTCoFaPOHWvYJKGkxw2-1.png" alt="" width="1600" height="1001" srcset="https://blog-cdn.jumpshare.com/blog/wp-content/uploads/2023/09/1-yceDwTCoFaPOHWvYJKGkxw2-1.png 1600w, https://blog-cdn.jumpshare.com/blog/wp-content/uploads/2023/09/1-yceDwTCoFaPOHWvYJKGkxw2-1-350x219.png 350w, https://blog-cdn.jumpshare.com/blog/wp-content/uploads/2023/09/1-yceDwTCoFaPOHWvYJKGkxw2-1-1024x641.png 1024w, https://blog-cdn.jumpshare.com/blog/wp-content/uploads/2023/09/1-yceDwTCoFaPOHWvYJKGkxw2-1-768x480.png 768w, https://blog-cdn.jumpshare.com/blog/wp-content/uploads/2023/09/1-yceDwTCoFaPOHWvYJKGkxw2-1-1536x961.png 1536w" sizes="(max-width: 1600px) 100vw, 1600px" /></p>
+<p><em>Spot price history for g5g.xlarge for the last three months.</em></p>
+<h2 class="graf graf--h3" style="text-align: left;">Navigating the Challenge — A How-To Guide</h2>
+<p class="graf graf--p" style="text-align: left;">This aims to bridge the gap by offering comprehensive step-by-step instructions suitable for newcomers and seasoned data scientists. The goal is to enable you to leverage these state-of-the-art technologies at a meager cost without the hassle of finding the right driver and packages for the G5g family. Eventually, we will compile all the individual steps into a single script that will further streamline the process.</p>
+<h3 class="graf graf--h4" style="text-align: left;">1. Launching an Instance</h3>
+<p class="graf graf--p" style="text-align: left;">For setting up an instance, we’ll use <code class="markup--code markup--p-code">g5g.4xlarge</code> instance. The idea behind using a more powerful instance is to accelerate compilation time. We will launch the build instance with the AWS Command Line Interface (aws cli).</p>
+<p class="graf graf--p" style="text-align: left;">First, set the following environment variables:</p>
+<ul class="postList" style="text-align: left;">
+<li class="graf graf--li"><code class="markup--code markup--li-code">REGION</code>: Specifies the AWS region, e.g., ‘us-east-1’.</li>
+<li class="graf graf--li"><code class="markup--code markup--li-code">SECURITY_GROUPS</code>: Your security group ID(s).</li>
+<li class="graf graf--li"><code class="markup--code markup--li-code">KEY_PAIR</code>: The name of your SSH key pair.</li>
+<li class="graf graf--li"><code class="markup--code markup--li-code">SUBNET</code>: The ID of your subnet.</li>
+</ul>
+<p class="graf graf--p" style="text-align: left;">If you have any confusion about these variables. You can refer to the <a class="markup--anchor markup--p-anchor" href="https://docs.aws.amazon.com/vpc/latest/userguide/security-groups.html" target="_blank" rel="noopener" data-href="https://docs.aws.amazon.com/vpc/latest/userguide/security-groups.html">security group,</a> <a class="markup--anchor markup--p-anchor" href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html" target="_blank" rel="noopener" data-href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html">keypair,</a> and <a class="markup--anchor markup--p-anchor" href="https://docs.aws.amazon.com/vpc/latest/userguide/configure-subnets.html" target="_blank" rel="noopener" data-href="https://docs.aws.amazon.com/vpc/latest/userguide/configure-subnets.html">subnets</a> documentation.</p>
+<p class="graf graf--p" style="text-align: left;">Once you have these values, you can set these variables like this.</p>
+<pre class="graf graf--pre graf--preV2" spellcheck="false" data-code-block-mode="2" data-code-block-lang="bash"><span class="pre--content"><span class="hljs-built_in">export</span> REGION=<span class="hljs-string">'us-east-1'</span>
+<span class="hljs-built_in">export</span> SECURITY_GROUPS=<span class="hljs-string">'YourFirstSecurityGroupIdsHere'</span>
+<span class="hljs-built_in">export</span> KEY_PAIR=<span class="hljs-string">'YourSSHKeyNameHere'</span>
+<span class="hljs-built_in">export</span> SUBNET=<span class="hljs-string">'YourSubnetHere'</span></span></pre>
+<p class="graf graf--p" style="text-align: left;">Next, we need to find the latest <strong class="markup--strong markup--p-strong">Amazon Linux 2023 AMI ID</strong> so you will get the latest AMI every time you run this script. The following command will fetch the AMI ID and store it as <code class="markup--code markup--p-code">AMI_ID</code>.</p>
+<p class="graf graf--p" style="text-align: left;">Let’s launch the instance using the AMI ID we retrieved earlier by executing:</p>
+<pre class="graf graf--pre graf--preV2" spellcheck="false" data-code-block-mode="1" data-code-block-lang="wasm"><span class="pre--content">aws ec2 run-instances \
+  --image-id <span class="hljs-variable">$AMI_ID</span> \
+  --instance-<span class="hljs-keyword">type</span> g5g.4xlarge \
+  --key-name <span class="hljs-variable">$KEY_PAIR</span> \
+  --subnet-id <span class="hljs-variable">$SUBNET</span> \
+  --security-group-ids <span class="hljs-variable">$SECURITY_GROUPS</span> \
+  --region <span class="hljs-variable">$REGION</span> \
+  --<span class="hljs-keyword">block</span>-device-mappings '[{<span class="hljs-string">"DeviceName"</span>:<span class="hljs-string">"/dev/xvda"</span>,<span class="hljs-string">"Ebs"</span>:{<span class="hljs-string">"VolumeSize"</span>:<span class="hljs-number">20</span>,<span class="hljs-string">"VolumeType"</span>:<span class="hljs-string">"gp3"</span>}}]' \
+  --tag-specifications 'ResourceType=instance,Tags=[{Key=Name,Value=AMI-Builder}]'</span></pre>
+<p class="graf graf--p" style="text-align: left;">This command initiates a <code class="markup--code markup--p-code">g5g.4xlarge</code> instance with the Latest Amazon Linux 2023 AMI ID. It also configures the instance to use the specified security groups, key pair, and subnet we provided in environment variables. We’ve also attached 20 GB of storage to the root device for downloading different libraries and PyTorch compilation.</p>
+<h3 class="graf graf--h4" style="text-align: left;">2. Installing System Updates and Required Packages</h3>
+<p class="graf graf--p" style="text-align: left;">Setting up any machine, be it local or in the cloud, it is always a good practice to keep it updated. This part will install all the updates and tools used in compilation or running AI tasks.<br />
+But before going to Gung Ho, We recommend taking an overview of the guide first and checking the complete script at the end of this tutorial, which should save you from lots of trouble.</p>
+<p class="graf graf--p" style="text-align: left;">First, let’s define some essential environment variables.</p>
+<pre class="graf graf--pre graf--preV2" spellcheck="false" data-code-block-mode="2" data-code-block-lang="bash"><span class="pre--content">CUDA_HOME=/usr/local/cuda
+HOME_DIR=/home/ec2-user</span></pre>
+<p class="graf graf--p" style="text-align: left;">Now, we’ll create a function called <code class="markup--code markup--p-code">install_utils</code> that carries out a series of tasks.</p>
+<pre class="graf graf--pre graf--preV2" spellcheck="false" data-code-block-mode="2" data-code-block-lang="bash"><span class="pre--content"><span class="hljs-function"><span class="hljs-title">install_utils</span></span>() {
+    <span class="hljs-comment"># Update all system packages to their latest versions</span>
+    dnf -y update
+
+    <span class="hljs-comment"># Install development tools, which include compilers and other utilities</span>
+    dnf -y groupinstall <span class="hljs-string">"Development Tools"</span>
+
+    <span class="hljs-comment"># Install the packages that are specifically required for our setup</span>
+    dnf install -y openssl-devel cmake3 rust cargo
+    dnf install -y amazon-efs-utils htop iotop yasm nasm jq python3-pip python-devel cronie cronie-anacron
+
+    <span class="hljs-comment"># Add necessary paths to the .bashrc file</span>
+    <span class="hljs-built_in">echo</span> <span class="hljs-string">"PATH=<span class="hljs-variable">$CUDA_HOME</span>/bin:\$PATH"</span> | sudo <span class="hljs-built_in">tee</span> -a <span class="hljs-variable">$HOME_DIR</span>/.bashrc
+    <span class="hljs-built_in">echo</span> <span class="hljs-string">"LD_LIBRARY_PATH=<span class="hljs-variable">$CUDA_HOME</span>/lib64:\$LD_LIBRARY_PATH"</span> | sudo <span class="hljs-built_in">tee</span> -a <span class="hljs-variable">$HOME_DIR</span>/.bashrc
+
+    <span class="hljs-comment"># Configure shared libraries</span>
+    <span class="hljs-built_in">echo</span> <span class="hljs-string">"/usr/local/lib"</span> | sudo <span class="hljs-built_in">tee</span> /etc/ld.so.conf.d/usr-local-lib.conf
+    <span class="hljs-built_in">echo</span> <span class="hljs-string">"/usr/local/lib64"</span> | sudo <span class="hljs-built_in">tee</span> -a /etc/ld.so.conf.d/usr-local-lib.conf
+}</span></pre>
+<p class="graf graf--p" style="text-align: left;">By running this <code class="markup--code markup--p-code">install_utils</code> function, you will have an updated OS and development tools needed in later steps.</p>
+<h3 class="graf graf--h4" style="text-align: left;">3. Installing Latest NVIDIA Drivers, CUDA 12.2 Toolkit, and Cuda Deep Neural Network Library</h3>
+<p class="graf graf--p" style="text-align: left;">In this step, we will install the NVIDIA GPU driver, the latest CUDA 12.2 toolkit, and CUDA Deep Neural Network (CuDNN) libraries. This part uses the latest driver and toolkit released on August 29, 2023. If you read it later, you can update the URLs for the latest driver and libraries; everything else will be the same. Steps to find the latest driver, toolkit, and library are also mentioned below.</p>
+<h4 class="graf graf--h4" style="text-align: left;"><strong class="markup--strong markup--h4-strong">Install NVIDIA GPU Driver</strong></h4>
+<p class="graf graf--p" style="text-align: left;">To download and install the NVIDIA Tesla T4G driver, execute</p>
+<pre class="graf graf--pre graf--preV2" spellcheck="false" data-code-block-mode="2" data-code-block-lang="bash"><span class="pre--content">wget https://us.download.nvidia.com/tesla/535.104.05/NVIDIA-Linux-aarch64-535.104.05.run
+sh NVIDIA-Linux-aarch64-535.104.05.run --disable-nouveau --silent</span></pre>
+<p class="graf graf--p" style="text-align: left;">If everything goes smoothly; you should have a working NVIDIA driver by now, which can be checked by running the NVIDIA system management interface command <code class="markup--code markup--p-code">nvidia-smi</code> in the terminal.</p>
+<p><img decoding="async" class="alignnone wp-image-3434 size-full" src="https://blog-cdn.jumpshare.com/blog/wp-content/uploads/2023/09/nvidia-smi.png" alt="" width="1600" height="706" srcset="https://blog-cdn.jumpshare.com/blog/wp-content/uploads/2023/09/nvidia-smi.png 1600w, https://blog-cdn.jumpshare.com/blog/wp-content/uploads/2023/09/nvidia-smi-350x154.png 350w, https://blog-cdn.jumpshare.com/blog/wp-content/uploads/2023/09/nvidia-smi-1024x452.png 1024w, https://blog-cdn.jumpshare.com/blog/wp-content/uploads/2023/09/nvidia-smi-768x339.png 768w, https://blog-cdn.jumpshare.com/blog/wp-content/uploads/2023/09/nvidia-smi-1536x678.png 1536w" sizes="(max-width: 1600px) 100vw, 1600px" /></p>
+<figure class="graf graf--figure"></figure>
+</div>
+</div>
+</section>
+<section class="section section--body">
+<div class="section-divider">
+<p><em>nvidia-smi — NVIDIA System Management Interface</em></p>
+<hr class="section-divider" />
+</div>
+<div class="section-content">
+<div class="section-inner sectionLayout--insetColumn">
+<p class="graf graf--p">The latest drivers for NVIDIA Tesla T4G can be found <a class="markup--anchor markup--p-anchor" href="https://www.nvidia.com/Download/Find.aspx" target="_blank" rel="noopener" data-href="https://www.nvidia.com/Download/Find.aspx">here</a> by selecting the following options.</p>
+<p><img loading="lazy" decoding="async" class="alignnone wp-image-3435 size-full" src="https://blog-cdn.jumpshare.com/blog/wp-content/uploads/2023/09/driver-download.png" alt="" width="1384" height="926" srcset="https://blog-cdn.jumpshare.com/blog/wp-content/uploads/2023/09/driver-download.png 1384w, https://blog-cdn.jumpshare.com/blog/wp-content/uploads/2023/09/driver-download-350x234.png 350w, https://blog-cdn.jumpshare.com/blog/wp-content/uploads/2023/09/driver-download-1024x685.png 1024w, https://blog-cdn.jumpshare.com/blog/wp-content/uploads/2023/09/driver-download-768x514.png 768w" sizes="(max-width: 1384px) 100vw, 1384px" /></p>
+<figure class="graf graf--figure"><figcaption class="imageCaption">For guidance on selecting the correct driver, refer to the options above. </figcaption></figure>
+</div>
+</div>
+</section>
+<section class="section section--body">
+<div class="section-divider">
+<hr class="section-divider" />
+</div>
+<div class="section-content">
+<div class="section-inner sectionLayout--insetColumn">
+<h4 class="graf graf--h4">Install CUDA Toolkit</h4>
+<p class="graf graf--p">The next step involves downloading and installing the CUDA 12.2 toolkit. which can be done by running following bash commands</p>
+<pre class="graf graf--pre graf--preV2" spellcheck="false" data-code-block-mode="2" data-code-block-lang="bash"><span class="pre--content">wget https://developer.download.nvidia.com/compute/cuda/12.2.2/local_installers/cuda_12.2.2_535.104.05_linux_sbsa.run
+sh cuda_12.2.2_535.104.05_linux_sbsa.run --silent --override \
+    --toolkit --samples --toolkitpath=/usr/local/cuda-12.2 \
+    --samplespath=<span class="hljs-variable">$CUDA_HOME</span> --no-opengl-libs 
+
+</span></pre>
+<p class="graf graf--p">To find the latest version, visit <a class="markup--anchor markup--p-anchor" href="https://developer.nvidia.com/cuda-toolkit" target="_blank" rel="noopener" data-href="https://developer.nvidia.com/cuda-toolkit">NVIDIA’s developer page</a> and use the following selection.</p>
+<p><img loading="lazy" decoding="async" class="alignnone wp-image-3436 size-full" src="https://blog-cdn.jumpshare.com/blog/wp-content/uploads/2023/09/cuda-toolkit.png" alt="" width="1600" height="936" srcset="https://blog-cdn.jumpshare.com/blog/wp-content/uploads/2023/09/cuda-toolkit.png 1600w, https://blog-cdn.jumpshare.com/blog/wp-content/uploads/2023/09/cuda-toolkit-350x205.png 350w, https://blog-cdn.jumpshare.com/blog/wp-content/uploads/2023/09/cuda-toolkit-1024x599.png 1024w, https://blog-cdn.jumpshare.com/blog/wp-content/uploads/2023/09/cuda-toolkit-768x449.png 768w, https://blog-cdn.jumpshare.com/blog/wp-content/uploads/2023/09/cuda-toolkit-1536x899.png 1536w" sizes="(max-width: 1600px) 100vw, 1600px" /></p>
+<figure class="graf graf--figure"></figure>
+</div>
+</div>
+</section>
+<section class="section section--body">
+<div class="section-divider">
+<hr class="section-divider" />
+</div>
+<div class="section-content">
+<div class="section-inner sectionLayout--insetColumn">
+<h4 class="graf graf--h4">Install NVIDIA CUDA® Deep Neural Network Library (cuDNN)</h4>
+<p class="graf graf--p">Lastly, we’ll install the CuDNN library for “Server Base System Architecture (SBSA)”.</p>
+<pre class="graf graf--pre graf--preV2" spellcheck="false" data-code-block-mode="2" data-code-block-lang="bash"><span class="pre--content">wget https://developer.download.nvidia.com/compute/cudnn/redist/cudnn/linux-sbsa/cudnn-linux-sbsa-8.9.4.25_cuda12-archive.tar.xz
+    tar -xf cudnn-linux-sbsa-8.9.4.25_cuda12-archive.tar.xz
+    <span class="hljs-built_in">cp</span> -P cudnn-linux-sbsa-8.9.4.25_cuda12-archive/include/* <span class="hljs-variable">$CUDA_HOME</span>/include/
+    <span class="hljs-built_in">cp</span> -P cudnn-linux-sbsa-8.9.4.25_cuda12-archive/lib/* <span class="hljs-variable">$CUDA_HOME</span>/lib64/
+    <span class="hljs-built_in">chmod</span> a+r <span class="hljs-variable">$CUDA_HOME</span>/lib64/*</span></pre>
+<p class="graf graf--p">Latest cuDNN can be downloaded from <a class="markup--anchor markup--p-anchor" href="https://developer.download.nvidia.com/compute/cudnn/redist/cudnn/linux-sbsa/" target="_blank" rel="noopener" data-href="https://developer.download.nvidia.com/compute/cudnn/redist/cudnn/linux-sbsa/">here</a>.</p>
+<p><img loading="lazy" decoding="async" class="alignnone wp-image-3437 size-full" src="https://blog-cdn.jumpshare.com/blog/wp-content/uploads/2023/09/cudnn-libraries.png" alt="" width="1600" height="828" srcset="https://blog-cdn.jumpshare.com/blog/wp-content/uploads/2023/09/cudnn-libraries.png 1600w, https://blog-cdn.jumpshare.com/blog/wp-content/uploads/2023/09/cudnn-libraries-350x181.png 350w, https://blog-cdn.jumpshare.com/blog/wp-content/uploads/2023/09/cudnn-libraries-1024x530.png 1024w, https://blog-cdn.jumpshare.com/blog/wp-content/uploads/2023/09/cudnn-libraries-768x397.png 768w, https://blog-cdn.jumpshare.com/blog/wp-content/uploads/2023/09/cudnn-libraries-1536x795.png 1536w" sizes="(max-width: 1600px) 100vw, 1600px" /></p>
+<figure class="graf graf--figure"><figcaption class="imageCaption">List of available cuDNN sbsa libraries for CUDA 11 and CUDA 12. </figcaption></figure>
+<p class="graf graf--p">By combining all three, we will have the following function, which we will use in the final script as well.</p>
+<pre class="graf graf--pre graf--preV2" spellcheck="false" data-code-block-mode="2" data-code-block-lang="bash"><span class="pre--content"><span class="hljs-function"><span class="hljs-title">setup_gpu</span></span>() {
+    wget https://us.download.nvidia.com/tesla/535.104.05/NVIDIA-Linux-aarch64-535.104.05.run
+    sh NVIDIA-Linux-aarch64-535.104.05.run --disable-nouveau --silent
+
+    wget https://developer.download.nvidia.com/compute/cuda/12.2.2/local_installers/cuda_12.2.2_535.104.05_linux_sbsa.run
+    sh cuda_12.2.2_535.104.05_linux_sbsa.run --silent --override --toolkit --samples --toolkitpath=/usr/local/cuda-12.2 --samplespath=<span class="hljs-variable">$CUDA_HOME</span> --no-opengl-libs
+
+    wget https://developer.download.nvidia.com/compute/cudnn/redist/cudnn/linux-sbsa/cudnn-linux-sbsa-8.9.4.25_cuda12-archive.tar.xz
+    tar -xf cudnn-linux-sbsa-8.9.4.25_cuda12-archive.tar.xz
+    <span class="hljs-built_in">cp</span> -P cudnn-linux-sbsa-8.9.4.25_cuda12-archive/include/* <span class="hljs-variable">$CUDA_HOME</span>/include/
+    <span class="hljs-built_in">cp</span> -P cudnn-linux-sbsa-8.9.4.25_cuda12-archive/lib/* <span class="hljs-variable">$CUDA_HOME</span>/lib64/
+    <span class="hljs-built_in">chmod</span> a+r <span class="hljs-variable">$CUDA_HOME</span>/lib64/*
+    ldconfig
+}</span></pre>
+</div>
+</div>
+</section>
+<section class="section section--body">
+<div class="section-divider">
+<hr class="section-divider" />
+</div>
+<div class="section-content">
+<div class="section-inner sectionLayout--insetColumn">
+<h3 class="graf graf--h4">4. Compiling and Installing CUDA 12.2 Enabled PyTorch</h3>
+<p class="graf graf--p">Next, we will compile and install PyTotch from source with the latest CUDA support for ARM-based ec2 instances, along with all the necessary Python packages.</p>
+<pre class="graf graf--pre graf--preV2" spellcheck="false" data-code-block-mode="2" data-code-block-lang="bash"><span class="pre--content"><span class="hljs-comment"># Download and install ccache for faster compilation</span>
+wget https://github.com/ccache/ccache/releases/download/v4.8.3/ccache-4.8.3.tar.xz
+tar -xf ccache-4.8.3.tar.xz
+<span class="hljs-built_in">pushd</span> ccache-4.8.3
+cmake .
+make -j <span class="hljs-variable">$CPUS</span>
+make install
+<span class="hljs-built_in">popd</span>
+
+<span class="hljs-comment"># Install NumPy, a dependency for PyTorch</span>
+dnf install -y numpy
+
+<span class="hljs-comment"># Install Python typing extensions for better type-checking</span>
+sudo -u ec2-user pip3 install typing-extensions
+
+<span class="hljs-comment"># Clone PyTorch repository and install from source</span>
+git <span class="hljs-built_in">clone</span> --recursive https://github.com/pytorch/pytorch.git
+<span class="hljs-built_in">pushd</span> pytorch
+python3 setup.py install
+<span class="hljs-built_in">popd</span>
+
+<span class="hljs-comment"># Refresh the dynamic linker run-time bindings</span>
+ldconfig
+
+<span class="hljs-comment"># Install additional Python libraries for PyTorch</span>
+sudo -u ec2-user pip3 install sympy filelock fsspec networkx
+</span></pre>
+<h3 class="graf graf--h4">5. Test Your Installation</h3>
+<p class="graf graf--p">After you’ve gone through the installation process, you’ll want to ensure that PyTorch and CUDA are working as expected. Run the following command to test the setup.</p>
+<pre class="graf graf--pre graf--preV2" spellcheck="false" data-code-block-mode="2" data-code-block-lang="bash"><span class="pre--content">python3 -c <span class="hljs-string">"import torch; print('Using device: ', torch.device('cuda' if torch.cuda.is_available() else 'cpu'))"</span>;</span></pre>
+<p class="graf graf--p">If the device returns ‘cuda,’ then congratulations, you’ve successfully installed PyTorch with latest CUDA support!</p>
+<h2 class="graf graf--h3">Complete Script for Effortless Setup <img src="https://s.w.org/images/core/emoji/15.0.3/72x72/1fa84.png" alt="🪄" class="wp-smiley" style="height: 1em; max-height: 1em;" /></h2>
+<p><img loading="lazy" decoding="async" class="alignnone wp-image-3438 size-full" src="https://blog-cdn.jumpshare.com/blog/wp-content/uploads/2023/09/mix-colors.png" alt="" width="1600" height="813" srcset="https://blog-cdn.jumpshare.com/blog/wp-content/uploads/2023/09/mix-colors.png 1600w, https://blog-cdn.jumpshare.com/blog/wp-content/uploads/2023/09/mix-colors-350x178.png 350w, https://blog-cdn.jumpshare.com/blog/wp-content/uploads/2023/09/mix-colors-1024x520.png 1024w, https://blog-cdn.jumpshare.com/blog/wp-content/uploads/2023/09/mix-colors-768x390.png 768w, https://blog-cdn.jumpshare.com/blog/wp-content/uploads/2023/09/mix-colors-1536x780.png 1536w" sizes="(max-width: 1600px) 100vw, 1600px" /></p>
+<figure class="graf graf--figure"></figure>
+<p class="graf graf--p">Ready for some magic? Before getting started, ensure that your AWS CLI is properly configured. If you haven’t done this, refer to the <a class="markup--anchor markup--p-anchor" href="https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-welcome.html" target="_blank" rel="noopener" data-href="https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-welcome.html">AWS documentation</a> to get up to speed. You will also need to gather the IDs for your <a class="markup--anchor markup--p-anchor" href="https://docs.aws.amazon.com/vpc/latest/userguide/security-groups.html" target="_blank" rel="noopener" data-href="https://docs.aws.amazon.com/vpc/latest/userguide/security-groups.html">security group</a> and <a class="markup--anchor markup--p-anchor" href="https://docs.aws.amazon.com/vpc/latest/userguide/configure-subnets.html" target="_blank" rel="noopener" data-href="https://docs.aws.amazon.com/vpc/latest/userguide/configure-subnets.html">subnet</a> and the name of your <a class="markup--anchor markup--p-anchor" href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html" target="_blank" rel="noopener" data-href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html">key pair</a>.</p>
+<p class="graf graf--p">Once you have completed the necessary preparations, run the provided script. This will launch a g5g.4xlarge instance pre-loaded with user data, which initiates the installation process upon launch. The entire setup process should take approximately an hour to complete. However, you can monitor the progress as it goes. To begin, SSH into your newly launched instance.</p>
+<pre class="graf graf--pre graf--preV2" spellcheck="false" data-code-block-mode="2" data-code-block-lang="bash"><span class="pre--content">ssh -i <span class="hljs-string">"your-key-pair.pem"</span> ec2-user@your-instance-ip </span></pre>
+<p class="graf graf--p">Then, run the following command to monitor the installation in real-time:</p>
+<pre class="graf graf--pre graf--preV2" spellcheck="false" data-code-block-mode="2" data-code-block-lang="bash"><span class="pre--content"><span class="hljs-built_in">tail</span> -f /home/ec2-user/install.log</span></pre>
+<p class="graf graf--p">The complete script can be downloaded from <a class="markup--anchor markup--p-anchor" href="https://gist.github.com/bilalmughal/0500f27454a508bd3552fcf03e3adadb" target="_blank" rel="noopener" data-href="https://gist.github.com/bilalmughal/0500f27454a508bd3552fcf03e3adadb">GitHub</a> and goes as follows.</p>
+<figure class="graf graf--figure graf--iframe">
+<div class="aspectRatioPlaceholder is-locked">
+<div class="aspectRatioPlaceholder-fill"></div>
+<div class="iframeContainer"><script src="https://gist.github.com/bilalmughal/0500f27454a508bd3552fcf03e3adadb.js"></script></div>
+</div>
+</figure>
+<p class="graf graf--p">After everything is done you should get the following greetings.</p>
+<p>&nbsp;</p>
+<figure class="graf graf--figure"><img loading="lazy" decoding="async" class="alignnone wp-image-3439 size-full" src="https://blog-cdn.jumpshare.com/blog/wp-content/uploads/2023/09/success.png" alt="" width="1600" height="560" srcset="https://blog-cdn.jumpshare.com/blog/wp-content/uploads/2023/09/success.png 1600w, https://blog-cdn.jumpshare.com/blog/wp-content/uploads/2023/09/success-350x123.png 350w, https://blog-cdn.jumpshare.com/blog/wp-content/uploads/2023/09/success-1024x358.png 1024w, https://blog-cdn.jumpshare.com/blog/wp-content/uploads/2023/09/success-768x269.png 768w, https://blog-cdn.jumpshare.com/blog/wp-content/uploads/2023/09/success-1536x538.png 1536w" sizes="(max-width: 1600px) 100vw, 1600px" /></figure>
+<h2 class="graf graf--h3">Using AWS Management Console</h2>
+<p class="graf graf--p">You can also use the AWS Management console for this process as well. All you need to do is “Launch an instance” from the ec2 console and then select the right AMI, Architecture, and instance type, along with other networking and security configurations you will do for launching any other instance. Don’t forget to increase the volume size to 20 GB as well.</p>
+<figure class="graf graf--figure"><img loading="lazy" decoding="async" class="alignnone wp-image-3440 size-full" src="https://blog-cdn.jumpshare.com/blog/wp-content/uploads/2023/09/launch-instance-1.png" alt="" width="826" height="1054" srcset="https://blog-cdn.jumpshare.com/blog/wp-content/uploads/2023/09/launch-instance-1.png 826w, https://blog-cdn.jumpshare.com/blog/wp-content/uploads/2023/09/launch-instance-1-274x350.png 274w, https://blog-cdn.jumpshare.com/blog/wp-content/uploads/2023/09/launch-instance-1-802x1024.png 802w, https://blog-cdn.jumpshare.com/blog/wp-content/uploads/2023/09/launch-instance-1-768x980.png 768w" sizes="(max-width: 826px) 100vw, 826px" /></figure>
+<figure class="graf graf--figure"></figure>
+<p class="graf graf--p">After selecting the right AMI, architecture, instance type, storage, and other options, configure your instance’s User Data by adding custom setup commands that will run during launch.<br />
+To add User Data, go to the ‘Advanced Details’ section during the ‘Configure Instance’ stage, input the desired text or file, and paste the script from the GitHub repository between the ‘EOF’ markers into the User Data text area.</p>
+<p>&nbsp;</p>
+<p><img loading="lazy" decoding="async" class="alignnone wp-image-3415 size-full" style="width: 100%;" src="https://blog-cdn.jumpshare.com/blog/wp-content/uploads/2023/09/Screenshot-2023-09-01-at-1.39.39-AM.png" alt="" width="984" height="852" srcset="https://blog-cdn.jumpshare.com/blog/wp-content/uploads/2023/09/Screenshot-2023-09-01-at-1.39.39-AM.png 984w, https://blog-cdn.jumpshare.com/blog/wp-content/uploads/2023/09/Screenshot-2023-09-01-at-1.39.39-AM-350x303.png 350w, https://blog-cdn.jumpshare.com/blog/wp-content/uploads/2023/09/Screenshot-2023-09-01-at-1.39.39-AM-768x665.png 768w" sizes="(max-width: 984px) 100vw, 984px" /></p>
+<figure class="graf graf--figure"></figure>
+<p class="graf graf--p">Remember, this User Data script is what automates your deep learning setup, so don’t skip this step!</p>
+<h2 class="graf graf--h3">Wrapping Up</h2>
+<p class="graf graf--p">And there you have it! A one-stop solution to make your deep learning setup on an Amazon EC2 Graviton2 ARM-based instance much easier. After following these steps, you can create an AMI (Amazon Machine Image) and use it for deep-learning tasks. You should also try out spot instances for your interruptible artificial intelligence inferences, as it could save you a lot on operational costs!<br />
+With this guide, we made configuration and setup hassle-free so you can dive straight into the work that matters most to you. If you find this script as helpful as we do, we would love to hear about the exciting projects it’s helping you accomplish. Feel free to share your success stories and any ingenious modifications you’ve made. Happy coding!</p>
+<h3 class="graf graf--h4"><img src="https://s.w.org/images/core/emoji/15.0.3/72x72/1f4a1.png" alt="💡" class="wp-smiley" style="height: 1em; max-height: 1em;" /> Pro Tip: Max Power, Min Price — The G5G Magic Equation!</h3>
+<p class="graf graf--p">Did you know the <code class="markup--code markup--p-code">g5g.xlarge</code>,<code class="markup--code markup--p-code"> g5g.2xlarge</code>, <code class="markup--code markup--p-code">g5g.4xlarge</code>and <code class="markup--code markup--p-code">g5g.8xlarge</code> <a href="https://instances.vantage.sh/?selected=g5g..x%7Cg5g.x" target="_blank" rel="noopener">have the same GPU power</a>? If increasing the CPU power or adding more memory doesn’t significantly improve the performance of your application, you can stick with the <code class="markup--code markup--p-code">g5g.xlarge</code> to save some money!</p>
+<p><img loading="lazy" decoding="async" class="alignnone size-full wp-image-3441" src="https://blog-cdn.jumpshare.com/blog/wp-content/uploads/2023/09/g5g-specs.png" alt="" width="1600" height="432" srcset="https://blog-cdn.jumpshare.com/blog/wp-content/uploads/2023/09/g5g-specs.png 1600w, https://blog-cdn.jumpshare.com/blog/wp-content/uploads/2023/09/g5g-specs-350x95.png 350w, https://blog-cdn.jumpshare.com/blog/wp-content/uploads/2023/09/g5g-specs-1024x276.png 1024w, https://blog-cdn.jumpshare.com/blog/wp-content/uploads/2023/09/g5g-specs-768x207.png 768w, https://blog-cdn.jumpshare.com/blog/wp-content/uploads/2023/09/g5g-specs-1536x415.png 1536w" sizes="(max-width: 1600px) 100vw, 1600px" /></p>
+<figure class="graf graf--figure"></figure>
+</div>
+</div>
+</section>
+<section class="section section--body">
+<div class="section-content">
+<div class="section-inner sectionLayout--insetColumn">
+<p><em>G5g Instance specification details.</em></p>
+<h2 class="graf graf--h3">About the Author and Our Journey at Jumpshare</h2>
+<p class="graf graf--p">I have been a part of the tech industry for 18 years, serving different roles and devising different engineering solutions throughout. The ever-changing landscape of the tech world and the challenges it brings excite me, especially in the area of cloud computing and machine learning.</p>
+<p class="graf graf--p">At Jumpshare<strong class="markup--strong markup--p-strong">,</strong> where I hold the position of VP of Engineering, we have successfully turned these challenges into opportunities. We’re passionate about implementing techniques like this to make our machine learning inference tasks more cost-effective. By leveraging the power of AWS Graviton2 and NVIDIA Tensor T4G instances, we’ve been able to drastically reduce operational costs without compromising performance.</p>
+<p class="graf graf--p">This guide is yet another effort to express our commitment to sharing our experience and insights with the community as we strongly believe that democratizing technology and saving costs on infrastructure can unlock doors to innovation.</p>
+<p class="graf graf--p">We’re always open to hearing about your own experiences and improvements on the journey towards cost-effective, high-performance deep learning.</p>
+</div>
+</div>
+</section>
+<div class="tptn_counter" id="tptn_counter_3392">(Visited 1,128 times, 8 visits today)</div><p>The post <a rel="nofollow" href="https://jumpshare.com/blog/deep-learning-on-aws-graviton2-nvidia-tensor-t4g-for-as-low-as-free-with-cuda-12-2/">Deep Learning on AWS Graviton2, NVIDIA Tensor T4G for as Low as Free with CUDA-12.2</a> appeared first on <a rel="nofollow" href="https://jumpshare.com/blog">Jumpshare Blog</a>.</p>
+]]></content:encoded>
+					
+					<wfw:commentRss>https://jumpshare.com/blog/deep-learning-on-aws-graviton2-nvidia-tensor-t4g-for-as-low-as-free-with-cuda-12-2/feed/</wfw:commentRss>
+			<slash:comments>0</slash:comments>
+		
+		
+		<post-id xmlns="com-wordpress:feed-additions:1">3392</post-id>	</item>
+	</channel>
+</rss>

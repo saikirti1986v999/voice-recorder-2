@@ -1,0 +1,11 @@
+<svg id="bookmark" xmlns="http://www.w3.org/2000/svg" width="84" height="84" viewBox="0 0 28 28">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #fff;
+        fill-rule: evenodd;
+      }
+    </style>
+  </defs>
+  <path id="bookmark-2" data-name="bookmark" class="cls-1" d="M912,173h12a2,2,0,0,1,2,2v26l-8.035-8L910,201V175A2,2,0,0,1,912,173Zm12.986,25.43L918,191.312l-7,7.133V175a1,1,0,0,1,1-1h12a1,1,0,0,1,1,1Z" transform="translate(-904 -173)"/>
+</svg>

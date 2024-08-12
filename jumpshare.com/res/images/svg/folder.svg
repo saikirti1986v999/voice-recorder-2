@@ -1,0 +1,11 @@
+<svg id="folder" xmlns="http://www.w3.org/2000/svg" width="84" height="84" viewBox="0 0 28 28">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #fff;
+        fill-rule: evenodd;
+      }
+    </style>
+  </defs>
+  <path id="stroke" class="cls-1" d="M841,201H817a2,2,0,0,1-2-2V175a2,2,0,0,1,2-2h9c1.462,0,1.633.981,2,2l1,3h12a2,2,0,0,1,2,2v19A2,2,0,0,1,841,201Zm-23.51-1c-0.55,0-1.5-.448-1.5-1V175c0-.551.947-1,1.5-1h8.688c0.553,0,.624.076,0.945,1.017l0.112,0.321L828.453,179h13.024c0.551,0,.5.449,0.5,1v19c0,0.552.052,1-.5,1H817.49ZM816,183h26v1H816v-1Z" transform="translate(-815 -173)"/>
+</svg>
