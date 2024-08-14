@@ -653,6 +653,7 @@ background-image: url("data:image/svg+xml,%3csvg width='100%25' height='100%25' 
           </svg>
           Your microphone did not capture any sound. Ensure it is properly connected and try again.
         </p>
+        <button id="btn_retest" class="btn btn-blue" style="margin: 0 auto; margin-top: 20px; width: 300px; display: block;">Restart Recording</button>
       </div>
       <div id="no_permission_div" class="hide">
         <p>
@@ -690,7 +691,7 @@ background-image: url("data:image/svg+xml,%3csvg width='100%25' height='100%25' 
           <div id="loading-spinner"></div>
         </div>
 
-          
+          <audio id="audio" controls="true" style="display: none;"></audio>
         </div>
 
         <div class="btn_wrpper">
