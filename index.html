@@ -39,7 +39,7 @@
 	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 	<meta http-equiv="refresh" content="14400;">
-	<link href="res/saii.png" rel="icon" sizes="any"/> <link id="favicon" href="res/sai.png" rel="shortcut icon" type="image/png" />	
+	<link href="res/sai.png" rel="icon" sizes="any"/> <link id="favicon" href="res/sai.png" rel="shortcut icon" type="image/png" />	
 	<!-- <link href="https://fonts.googleapis.com/css?family=Open+Sans:300" rel="stylesheet"> -->
 	<!-- Style sheets -->
 	<style>
@@ -390,22 +390,6 @@ background-image: url("data:image/svg+xml,%3csvg width='100%25' height='100%25' 
 
   /* End: LAYERS */
   /* Start: CONTROL BAR */
-  .mejs__controls {
-    bottom: 0;
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    height: 50px;
-    left: 0;
-    list-style-type: none;
-    margin: 0;
-    padding: 0 16px;
-    position: absolute;
-    width: 100%;
-    transition: all 0.18s ease;
-    z-index: 30000;
-  }
 
   .mejs__controls:before {
     content: '';
@@ -421,13 +405,7 @@ background-image: url("data:image/svg+xml,%3csvg width='100%25' height='100%25' 
     pointer-events: none;
   }
 
-  .mejs__controls:hover {
-    display: flex !important;
-  }
-
-  .mejs__controls:not([style*='display: none']) {
-    height: 50px;
-  }
+  
 
   .mejs__button,
   .mejs__time,
@@ -440,26 +418,7 @@ background-image: url("data:image/svg+xml,%3csvg width='100%25' height='100%25' 
     margin-top: 11px;
   }
 
-  .mejs__button>button {
-    background: transparent url('res/images/mejs-controls.svg');
-    border: 0;
-    cursor: pointer;
-    display: block;
-    font-size: 0;
-    height: 16px;
-    line-height: 0;
-    margin: 10px 6px;
-    overflow: hidden;
-    padding: 0;
-    position: absolute;
-    text-decoration: none;
-    width: 20px;
-  }
-
-  /* :focus for accessibility */
-  .mejs__button>button:focus {
-    outline: dotted 1px #999;
-  }
+  
 
   .mejs__container-keyboard-inactive a,
   .mejs__container-keyboard-inactive a:focus,
@@ -488,73 +447,7 @@ background-image: url("data:image/svg+xml,%3csvg width='100%25' height='100%25' 
 
   /* End: Time (Current / Duration) */
   /* Start: Play/Pause/Stop */
-  .mejs__play>button {
-    background-position: 0 0;
-  }
-
-  .mejs__pause>button {
-    background-position: -17px 0;
-  }
-
-  .mejs__replay>button {
-    background-position: -160px -1px;
-    height: 17px;
-  }
-
-  /* End: Play/Pause/Stop */
-  .mejs__time-rail {
-    direction: ltr;
-    -webkit-box-flex: 1;
-    -webkit-flex-grow: 1;
-    -ms-flex-positive: 1;
-    flex-grow: 1;
-    height: 18px;
-    margin: 0;
-    left: 0;
-    width: 100%;
-    position: absolute;
-    z-index: 1000;
-    cursor: pointer;
-  }
-
-  .mejs__time-rail:hover .mejs__time-total,
-  .mejs__time-rail:hover .mejs__time-buffering,
-  .mejs__time-rail:hover .mejs__time-loaded,
-  .mejs__time-rail:hover .mejs__time-current,
-  .mejs__time-rail:hover .mejs__time-marker {
-    transform: scaleY(1.25);
-  }
-
-  .mejs__time-total,
-  .mejs__time-buffering,
-  .mejs__time-loaded,
-  .mejs__time-current,
-  .mejs__time-float,
-  .mejs__time-hovered,
-  .mejs__time-float-current,
-  .mejs__time-float-corner,
-  .mejs__time-marker {
-    cursor: pointer;
-    display: block;
-    height: 4px;
-    position: absolute;
-  }
-
-  .mejs__time-total {
-    background: rgba(255, 255, 255, 0.3);
-    margin: 3px 0 0;
-    width: 100%;
-    z-index: 100000;
-  }
-
-  .mejs__time-loaded {
-    background: rgba(255, 255, 255, 0.7);
-  }
-
-  .mejs__time-current,
-  .mejs__time-handle-content {
-    background: #0079d3;
-  }
+  
 
   .trim_action_active .mejs__time-current,
   .frame_thumb_active .mejs__time-current,
@@ -2311,21 +2204,7 @@ background-image: url("data:image/svg+xml,%3csvg width='100%25' height='100%25' 
         //media.setSrc('https://pouch.jumpshare.com/preview/-wI1QJmhD0D0oD8rhh_NV3m6RYIGq8sfE2mSKXpccaAEsc1PE8m6zC9FGbpMBTaKZoHgJe8U1xyM1xrWiOnG7xUuhX9lBa4YUltQDTMVHrs'); 
        
      
-          $(".display-playback-speed").remove();
-          $('<div class="display-playback-speed"></div>').appendTo('.mejs__controls ');
-        
-         $('#audio_wrapper .display-playback-speed').html("<p style='margin-right: 8px;'>1<span style='left: 19px;'>×</span></p>");
-					var a = 1;
-					$("#audio_wrapper .display-playback-speed").click(function () {
-					  ++a > 7 && (a = 1),
-					      1 == a && ((media.playbackRate = 1), $(".display-playback-speed").html("<p style='margin-right: 8px;'>1<span style='left: 19px;'>×</span></p>")),
-					      2 == a && ((media.playbackRate = 1.25), $(".display-playback-speed").html("<p style='margin-right: 16px;'>1.2<span style='left: 27px;'>×</span></p>")),
-					      3 == a && ((media.playbackRate = 1.5), $(".display-playback-speed").html("<p style='margin-right: 16px;'>1.5<span style='left: 27px;'>×</span></p>")),
-					      4 == a && ((media.playbackRate = 1.75), $(".display-playback-speed").html("<p style='margin-right: 16px;'>1.7<span style='left: 27px;'>×</span></p>")),
-					      5 == a && ((media.playbackRate = 2), $(".display-playback-speed").html("<p style='margin-right: 8px;'>2<span style='left: 19px;'>×</span></p>")),
-					      6 == a && ((media.playbackRate = 2.5), $(".display-playback-speed").html("<p style='margin-right: 16px;'>2.5<span style='left: 27px;'>×</span></p>")),
-					      7 == a && ((media.playbackRate = 0.5), $(".display-playback-speed").html("<p style='margin-right: 16px;'>0.5<span style='left: 27px;'>×</span></p>"));
-					})
+         
 
 
 
